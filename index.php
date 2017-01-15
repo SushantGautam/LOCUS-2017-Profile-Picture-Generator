@@ -1,17 +1,18 @@
-/**
+<!-- 
 LOCUS-2017-Profile-Picture-Generator
 Coded by Sushant Gautam :: susant.gautam@gmail.com  :: sushant.info.np
 GITHUB: https://github.com/SushantGautam/LOCUS-2017-Profile-Picture-Generator/
 January 17, 2015
 MIT License, Copyright (c) 2017 Sushant Gautam
- */
+ -->
 
 <!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <head>
-<title>Facebook Login JavaScript Example</title>
+<title>LOCUS 2017 Profile Picture Generator</title>
 <meta charset="UTF-8">
+<h4>LOCUS 2017 Profile Picture Generator <h4> 
 </head>
 <body>
 <script>
@@ -216,5 +217,11 @@ blend();
 <button type="button" onclick="merge();"> Generate Profile Picture </button> <br> <br>
 <canvas id="canvas"></canvas>
 </div>
+<p>Coded by Sushant Gautam :: <a href="mailto:susant.gautam@gmail.com">susant.gautam@gmail.com</a>  :: sushant.info.np <br>
+GITHUB: <a href="https://github.com/SushantGautam/LOCUS-2017-Profile-Picture-Generator/">https://github.com/SushantGautam/LOCUS-2017-Profile-Picture-Generator/</a> <br>
+January 17, 2015 <br>
+MIT License, Copyright (c) 2017 Sushant Gautam <br></p>
+
+<p>See the implementation at : <a href="http://chhori.org/locus">http://chhori.org/locus</a></p>
 </body>
 </html>
