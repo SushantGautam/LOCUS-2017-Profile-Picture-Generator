@@ -217,11 +217,9 @@ blend();
 <button type="button" onclick="merge();"> Generate Profile Picture </button> <br> <br>
 <canvas id="canvas"></canvas>
 </div>
-<p>Coded by Sushant Gautam :: <a href="mailto:susant.gautam@gmail.com">susant.gautam@gmail.com</a>  :: sushant.info.np <br>
+<p>Coded by Sushant Gautam :: <a href="mailto:susant.gautam@gmail.com">susant.gautam@gmail.com</a>  :: <a href="http://sushant.info.np"> sushant.info.np </a> <br>
 GITHUB: <a href="https://github.com/SushantGautam/LOCUS-2017-Profile-Picture-Generator/">https://github.com/SushantGautam/LOCUS-2017-Profile-Picture-Generator/</a> <br>
 January 17, 2015 <br>
 MIT License, Copyright (c) 2017 Sushant Gautam <br></p>
-
-<p>See the implementation at : <a href="http://chhori.org/locus">http://chhori.org/locus</a></p>
 </body>
 </html>
