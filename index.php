@@ -98,10 +98,10 @@ var canvas;
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-       document.getElementById('output').style.display = 'true';
+       document.getElementById('output').style.display = 'block';
       //$(".login").hide();
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + ' '+ response.id+'!';
+        'Thanks for logging in, ' + response.name + '.';
         //https://graph.facebook.com/67563683055/picture?width=9999&height=9999
         imageurl= "https://graph.facebook.com/"+response.id+"/picture?width=500&height=500";
         load();
