@@ -1,3 +1,11 @@
+/**
+LOCUS-2017-Profile-Picture-Generator
+Coded by Sushant Gautam :: susant.gautam@gmail.com  :: sushant.info.np
+GITHUB: https://github.com/SushantGautam/LOCUS-2017-Profile-Picture-Generator/
+January 17, 2015
+MIT License, Copyright (c) 2017 Sushant Gautam
+ */
+
 <!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -9,7 +17,8 @@
 <script>
 
 var imageurl;
-
+var dataURL;
+var canvas;
 
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -26,11 +35,14 @@ var imageurl;
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this app.';
+        document.getElementById('output').style.display = 'none';
     } else {
+    
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
+        document.getElementById('output').style.display = 'none';
     }
   }
 
@@ -85,6 +97,8 @@ var imageurl;
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
+       document.getElementById('output').style.display = 'true';
+      //$(".login").hide();
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + ' '+ response.id+'!';
         //https://graph.facebook.com/67563683055/picture?width=9999&height=9999
@@ -116,13 +130,6 @@ show_image('http://google.com/images/logo.gif',
     });
   }
   
-  function download(){
-    //document.getElementById("downloader").download = "image.png";
-    //document.getElementById("downloader").href = document.getElementById("canvas").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-    var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
-
-window.location.href=image; // it will save locally
-}
 
 var ximg1= new Image();
 var ximg2= new Image();
@@ -162,7 +169,7 @@ return $.Deferred().resolve();
 
 
 function blend () {
-var canvas = document.getElementById("canvas");
+canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 var width = img1.width;
 console.log(img1.width);
@@ -182,21 +189,32 @@ while (pixels--) {
 }
 image1.data = imageData1;
 context.putImageData(image1, 0, 0);
+
+
+      // save canvas image as data url (png format by default)
+      dataURL = canvas.toDataURL();
+//console.log(dataURL);
+
 };
   
 function merge(){
 blend();
 };
+
     
 </script>
+
+<div id="login" >
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 <div id="status"> </div>
+</div>
+
+<div id="output" >
 <div id="photo"> </div>
 <br>
-<button type="button" onclick="merge();"> Submit</button> <br>
-<a href="#" id="downloader" onclick="download()" download="image.png">Download!</a> <br>
-<p>Blended image<br><canvas id="canvas"></canvas></p><br>
-<p>Blended image<br><canvas id="canvas"></canvas></p><br>
+<button type="button" onclick="merge();"> Generate Profile Picture </button> <br> <br>
+<canvas id="canvas"></canvas>
+</div>
 </body>
 </html>
